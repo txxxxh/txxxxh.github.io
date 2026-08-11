@@ -1,35 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta name="google-site-verification" content="lPPvKpgfsXNx42nOgctxqtq1xa8JKGYVEGN87iuK4Xw" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xuhan Tong — Academic Homepage</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="lPPvKpgfsXNx42nOgctxqtq1xa8JKGYVEGN87iuK4Xw">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Xuhan Tong is an undergraduate researcher at Tsinghua University working on reliable inference, in-context learning, hallucination, and multi-agent collaboration.">
+  <meta name="theme-color" content="#102a43">
+  <title>Xuhan Tong | LLM Reliability</title>
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --navy: #102a43;
+      --blue: #1f5f8b;
+      --blue-soft: #eaf2f7;
+      --ink: #17212b;
+      --muted: #5b6875;
+      --line: #d9e0e5;
+      --paper: #fbfaf7;
+      --white: #fff;
+      --serif: Iowan Old Style, Baskerville, Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    :root {
-      --ink: #1a1a18;
-      --ink-light: #4a4a46;
-      --ink-faint: #8a8a84;
-      --paper: #f7f5f0;
-      --paper-warm: #f0ede6;
-      --rule: #d8d4cc;
-      --accent: #2a4a7f;
-      --accent-light: #e8eef7;
-      --serif: 'EB Garamond', Georgia, serif;
-      --mono: 'JetBrains Mono', monospace;
+    * {
+      box-sizing: border-box;
     }
 
     html {
@@ -37,688 +32,686 @@
     }
 
     body {
-      background: var(--paper);
+      margin: 0;
       color: var(--ink);
-      font-family: var(--serif);
-      font-size: 17px;
-      line-height: 1.75;
-      min-height: 100vh;
+      background: var(--paper);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Layout ── */
-    .page-wrap {
-      max-width: 900px;
+    a {
+      color: var(--blue);
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--navy);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 0 2rem;
     }
 
-    /* ── Top rule ── */
-    .top-rule {
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 60%, var(--rule) 100%);
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
     }
 
-    /* ── Nav ── */
+    .skip-link:focus {
+      left: 16px;
+      top: 12px;
+      z-index: 10;
+      background: white;
+      padding: 8px 12px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      border-top: 4px solid var(--navy);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
     nav {
-      border-bottom: 1px solid var(--rule);
-      padding: 0.9rem 0;
-    }
-
-    nav .page-wrap {
+      min-height: 62px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    .nav-name {
-      font-size: 0.85rem;
-      font-family: var(--mono);
-      color: var(--ink-light);
-      letter-spacing: 0.04em;
+    .brand {
+      color: var(--navy);
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      font-weight: 700;
       text-decoration: none;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      align-items: center;
+      gap: 26px;
+      margin: 0;
+      padding: 0;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 0.85rem;
-      font-family: var(--mono);
-      color: var(--ink-light);
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 650;
+      letter-spacing: .07em;
       text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: color 0.15s;
+      text-transform: uppercase;
     }
 
     .nav-links a:hover {
-      color: var(--accent);
+      color: var(--navy);
     }
 
-    /* ── Hero / Profile ── */
     .hero {
-      padding: 5rem 0 4rem;
       display: grid;
-      grid-template-columns: 1fr 200px;
-      gap: 4rem;
-      align-items: start;
+      grid-template-columns: 1fr 240px;
+      gap: 72px;
+      align-items: center;
+      padding: 88px 0 76px;
     }
 
-    .hero-text h1 {
-      font-size: 2.8rem;
+    .eyebrow {
+      margin: 0 0 13px;
+      color: var(--blue);
+      font-size: .75rem;
+      font-weight: 750;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--navy);
+      font-family: var(--serif);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(3.25rem, 8vw, 5.35rem);
       font-weight: 500;
-      line-height: 1.15;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.3rem;
+      letter-spacing: -.055em;
+      line-height: .95;
     }
 
-    .hero-text h1 em {
-      font-style: italic;
-      color: var(--accent);
+    .role {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.03rem;
     }
 
-    .hero-affiliation {
-      font-size: 1rem;
-      color: var(--ink-light);
-      margin-bottom: 1.8rem;
-      line-height: 1.5;
-    }
-
-    .hero-affiliation span {
-      display: block;
-    }
-
-    .hero-bio {
-      font-size: 1.05rem;
-      color: var(--ink);
-      max-width: 56ch;
-      margin-bottom: 2rem;
+    .lede {
+      max-width: 720px;
+      margin: 0 0 30px;
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+      line-height: 1.48;
     }
 
     .hero-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 10px 18px;
     }
 
     .hero-links a {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.35rem 0.9rem;
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      font-size: 0.82rem;
-      font-family: var(--mono);
-      color: var(--ink-light);
+      gap: 7px;
+      font-size: .9rem;
+      font-weight: 650;
       text-decoration: none;
-      background: white;
-      transition: border-color 0.15s, color 0.15s, background 0.15s;
     }
 
-    .hero-links a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-light);
+    .hero-links svg {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 auto;
     }
 
-    .hero-links a svg {
-      flex-shrink: 0;
+    .portrait {
+      position: relative;
     }
 
-    /* Avatar */
-    .hero-avatar {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      padding-top: 0.5rem;
+    .portrait::before {
+      content: "";
+      position: absolute;
+      inset: 16px -16px -16px 16px;
+      border: 1px solid #9fb7c7;
     }
 
-    .avatar-frame {
-      width: 160px;
-      height: 160px;
-      border-radius: 4px;
-      overflow: hidden;
-      border: 1px solid var(--rule);
-      background: var(--paper-warm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .portrait img {
+      position: relative;
+      width: 240px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 48% center;
+      filter: saturate(.82) contrast(1.02);
     }
 
-    .avatar-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      color: var(--ink-faint);
-      font-size: 0.7rem;
-      font-family: var(--mono);
-      text-align: center;
-    }
-
-    .avatar-placeholder svg {
-      opacity: 0.4;
-    }
-
-    /* ── Section ── */
     section {
-      padding: 3.5rem 0;
-      border-top: 1px solid var(--rule);
+      padding: 74px 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 70px;
     }
 
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .section-title {
-      font-size: 1.45rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-
-    .section-rule {
-      flex: 1;
-      height: 1px;
-      background: var(--rule);
-    }
-
-    /* ── About ── */
-    .about-grid {
+    .section-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 4rem;
+      grid-template-columns: 180px 1fr;
+      gap: 54px;
     }
 
-    .about-body p {
-      margin-bottom: 1.1rem;
-      font-size: 1.02rem;
-    }
-
-    .about-sidebar h3 {
-      font-size: 0.82rem;
-      font-family: var(--mono);
-      color: var(--ink-faint);
-      letter-spacing: 0.08em;
+    .section-label {
+      margin: 0;
+      color: var(--blue);
+      font-size: .9rem;
+      font-weight: 750;
+      letter-spacing: .11em;
       text-transform: uppercase;
-      margin-bottom: 1rem;
     }
 
-    .interest-list {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .interest-list li {
-      font-size: 0.92rem;
-      color: var(--ink-light);
-      padding: 0.25rem 0;
-      border-bottom: 1px solid var(--paper-warm);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .interest-list li::before {
-      content: '◆';
-      font-size: 0.4rem;
-      color: var(--accent);
-    }
-
-    .edu-item {
-      margin-bottom: 1.2rem;
-    }
-
-    .edu-degree {
-      font-size: 0.92rem;
+    h2 {
+      max-width: 760px;
+      margin: -5px 0 24px;
+      font-size: clamp(1.9rem, 3.2vw, 2.65rem);
       font-weight: 500;
+      letter-spacing: -.03em;
+      line-height: 1.17;
     }
 
-    .edu-school {
-      font-size: 0.85rem;
-      color: var(--ink-light);
+    .section-intro {
+      max-width: 760px;
+      margin: 0 0 40px;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 1.18rem;
     }
 
-    .edu-year {
-      font-size: 0.8rem;
-      font-family: var(--mono);
-      color: var(--ink-faint);
+    .research-map {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--navy);
     }
 
-    /* ── Publications ── */
-    .pub-filters {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
+    .research-item {
+      min-height: 208px;
+      padding: 28px 30px 30px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .filter-btn {
-      padding: 0.25rem 0.85rem;
-      font-size: 0.78rem;
-      font-family: var(--mono);
-      border: 1px solid var(--rule);
-      background: white;
-      color: var(--ink-light);
-      cursor: pointer;
-      border-radius: 2px;
-      transition: all 0.15s;
-      letter-spacing: 0.03em;
+    .research-item:nth-child(odd) {
+      padding-right: 42px;
+      border-right: 1px solid var(--line);
     }
 
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
+    .research-item:nth-child(even) {
+      padding-left: 42px;
+    }
+
+    .research-number {
+      color: #7891a4;
+      font-size: .72rem;
+      font-weight: 750;
+      letter-spacing: .12em;
+    }
+
+    h3 {
+      margin: 10px 0 9px;
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .research-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.62;
     }
 
     .pub-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      border-top: 1px solid var(--navy);
     }
 
-    .pub-item {
-      padding: 1.6rem 0;
-      border-bottom: 1px solid var(--paper-warm);
+    .publication {
       display: grid;
-      grid-template-columns: 3rem 1fr;
-      gap: 1.2rem;
-      align-items: start;
-      animation: fadeUp 0.4s ease both;
-    }
-
-    .pub-item:first-child {
-      border-top: 1px solid var(--paper-warm);
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      grid-template-columns: 62px 1fr;
+      gap: 26px;
+      padding: 30px 0 32px;
+      border-bottom: 1px solid var(--line);
     }
 
     .pub-year {
-      font-size: 0.78rem;
-      font-family: var(--mono);
-      color: var(--ink-faint);
-      padding-top: 0.15rem;
-      text-align: right;
+      padding-top: 3px;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
     }
-
-    .pub-content {}
 
     .pub-title {
-      font-size: 1.05rem;
-      font-weight: 500;
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: 1.28rem;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .authors,
+    .venue {
+      margin: 0;
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .venue {
+      margin-top: 4px;
       color: var(--ink);
-      margin-bottom: 0.3rem;
-      line-height: 1.4;
-    }
-
-    .pub-authors {
-      font-size: 0.88rem;
-      color: var(--ink-light);
-      margin-bottom: 0.3rem;
-    }
-
-    .pub-authors strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    .pub-venue {
-      font-size: 0.88rem;
       font-style: italic;
-      color: var(--ink-light);
-      margin-bottom: 0.7rem;
-    }
-
-    .pub-venue .venue-name {
-      color: var(--accent);
-      font-style: normal;
-      font-weight: 500;
-    }
-
-    .pub-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .badge {
-      padding: 0.15rem 0.55rem;
-      font-size: 0.72rem;
-      font-family: var(--mono);
-      border-radius: 2px;
-      letter-spacing: 0.03em;
-    }
-
-    .badge-oral {
-      background: #fdf3e7;
-      color: #b05a00;
-      border: 1px solid #f5d9b0;
-    }
-
-    .badge-spotlight {
-      background: #edf3fd;
-      color: var(--accent);
-      border: 1px solid #c5d5f0;
-    }
-
-    .badge-best {
-      background: #f0faf3;
-      color: #1a6b35;
-      border: 1px solid #b0dfc0;
     }
 
     .pub-links {
       display: flex;
-      gap: 0.5rem;
       flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 13px;
     }
 
-    .pub-link {
-      font-size: 0.78rem;
-      font-family: var(--mono);
-      color: var(--accent);
+    .pub-links a {
+      font-size: .78rem;
+      font-weight: 750;
+      letter-spacing: .06em;
       text-decoration: none;
-      padding: 0.1rem 0;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.15s;
+      text-transform: uppercase;
     }
 
-    .pub-link:hover {
-      border-bottom-color: var(--accent);
+    .equal {
+      font-size: .8rem;
+      color: var(--muted);
     }
 
-    .pub-link+.pub-link::before {
-      content: '/';
-      margin-right: 0.5rem;
-      color: var(--rule);
+    .timeline {
+      border-top: 1px solid var(--navy);
     }
 
-    /* ── Footer ── */
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 28px;
+      padding: 27px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-date {
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.45;
+    }
+
+    .timeline-title {
+      margin: 0 0 4px;
+      font-family: var(--serif);
+      font-size: 1.17rem;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .timeline-place {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: .88rem;
+    }
+
+    .timeline-copy {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .experience-summary {
+      max-width: 780px;
+      padding: 28px 0 4px;
+      border-top: 1px solid var(--navy);
+    }
+
+    .experience-summary h3 {
+      margin-top: 0;
+      font-size: 1.45rem;
+    }
+
+    .experience-meta {
+      margin: 0 0 16px;
+      color: var(--blue);
+      font-size: .9rem;
+    }
+
+    .experience-summary p:not(.experience-meta) {
+      margin: 0 0 15px;
+      color: var(--muted);
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 54px;
+    }
+
+    .detail-block {
+      border-top: 1px solid var(--navy);
+      padding-top: 22px;
+    }
+
+    .detail-block h3 {
+      margin-top: 0;
+    }
+
+    .detail-block p {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .award-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .award-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .91rem;
+      line-height: 1.5;
+    }
+
+    .award-year {
+      float: right;
+      margin-left: 16px;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
     footer {
-      border-top: 1px solid var(--rule);
-      padding: 2rem 0 3rem;
+      padding: 34px 0 42px;
+      border-top: 1px solid var(--line);
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      font-family: var(--mono);
-      color: var(--ink-faint);
+      gap: 20px;
+      color: var(--muted);
+      font-size: .79rem;
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 680px) {
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 28px, 1080px);
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links li:nth-child(2),
+      .nav-links li:nth-child(3) {
+        display: none;
+      }
+
       .hero {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 46px;
+        padding: 64px 0 58px;
       }
 
-      .hero-avatar {
-        flex-direction: row;
-        align-items: center;
+      .portrait {
+        width: 170px;
+        order: -1;
       }
 
-      .avatar-frame {
-        width: 100px;
-        height: 100px;
+      .portrait img {
+        width: 170px;
       }
 
-      .about-grid {
+      .section-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 22px;
+      }
+
+      .research-map,
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-item,
+      .research-item:nth-child(odd),
+      .research-item:nth-child(even) {
+        min-height: auto;
+        padding: 24px 0;
+        border-right: 0;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
       .footer-inner {
         flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <div class="top-rule"></div>
-
-  <nav>
-    <div class="page-wrap">
-      <a href="#" class="nav-name">X. T.</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="#top">Xuhan Tong</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#awards">Awards</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
-        <li><a href="mailto:tongxh1204@gmail.com">Contact</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="cv.pdf">CV</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <!-- ── Hero ── -->
-  <div class="page-wrap">
-    <div class="hero">
-      <div class="hero-text">
-        <h1>Xuhan <em>Tong</em></h1>
-        <div class="hero-affiliation">
-          <span>Undergraduate Student</span>
-          <span>Weiyang College</span>
-          <span>Tsinghua University</span>
-        </div>
-        <p class="hero-bio">
-        I am an undergraduate student at Tsinghua University. 
-        My research interests lie in machine learning, particularly in the theoretical foundations of learning algorithms, including stability and generalization.
-        </p>
-        <div class="hero-links">
-          <a href="mailto:tongxh1204@gmail.com">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-            Email
-          </a>
-          <a href="https://github.com/txxxxh" target="_blank">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
-            </svg>
-            GitHub
-          </a>
-          <a href="https://scholar.google.com/citations?user=ujzdY7cAAAAJ&hl=zh-CN&oi=sra" target="_blank">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-              <path d="M12 17h.01" />
-            </svg>
-            Google Scholar
-          </a>
-          <a href="cv.pdf" target="_blank">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-              <polyline points="14,2 14,8 20,8" />
-            </svg>
-            CV / Résumé
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-avatar">
-        <div class="avatar-frame">
-          <img src="photo.jpg" alt="Xuhan Tong" style="width:100%;height:100%;object-fit:cover;" />
-        </div>
-        <span style="color:var(--ink-light);font-size:0.75rem;">Email: tongxh1204@gmail.com</span>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <!-- ── About ── -->
-  <div class="page-wrap">
-    <section id="about">
-      <div class="section-header">
-        <h2 class="section-title">About</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="about-grid">
-        <div class="about-body">
-          <p>
-            I am broadly interested in Machine Learning. My current work investigates
-            LLM stability and generalization.
-            Currently, I am a undergraduate student at Tsinghua University, majoring in Software Engineering &
-            Mathematics and Physics.
-          </p>
-          <p>
-            My recent work aims to provide a mathematical understanding of how LLMs perform reasoning and
-            generalization, including analyses of in-context learning, prompting strategies, and hallucination in large language models. 
-          </p>
-          <p>
-            During my studies, I have had the opportunity to be a research intern at the
-            University of Wisconsin-Madison. I am fortunate to be advised by
-            Prof. <a href="https://jwzhang.netlify.app/" target="_blank">Jiawei Zhang</a>.
-          </p>
-          <p>
-            Feel free to reach out — I am always happy to discuss research ideas or collaborations.
-          </p>
-        </div>
-        <div class="about-sidebar">
-          <h3>Research Interests</h3>
-          <ul class="interest-list">
-            <li>In-context Learning Theory</li>
-            <li>Chain-of-thought Reasoning</li>
-            <li>LLM Hallucination</li>
-          </ul>
-          <h3>Education</h3>
-          <div class="edu-item">
-            <div class="edu-degree">Undergraduate in Software Engineering & Mathematical Basic Sciences</div>
-            <div class="edu-school">Tsinghua University</div>
-            <div class="edu-year">2023 — Present</div>
+  <main id="main">
+    <div class="wrap" id="top">
+      <div class="hero">
+        <div>
+          <h1>Xuhan Tong</h1>
+          <p class="role">Tsinghua University · Mathematics &amp; Physics + Software Engineering</p>
+          <p class="lede">I study how language models select and execute inference paths—and how prompt evidence,
+            internal priors, and collaborative strategies shape reliable reasoning.</p>
+          <div class="hero-links" aria-label="Profile links">
+            <a href="mailto:tongxh23@mails.tsinghua.edu.cn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" aria-hidden="true">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2" />
+                <path d="m3.5 7 7.3 5.2a2 2 0 0 0 2.4 0L20.5 7" />
+              </svg>Email</a>
+            <a href="https://scholar.google.com/citations?user=ujzdY7cAAAAJ" target="_blank" rel="noreferrer"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M2.5 9.5 12 4l9.5 5.5L12 15 2.5 9.5Z" />
+                <path d="M6.5 12v4.3c2.8 2.2 8.2 2.2 11 0V12" />
+                <path d="M21.5 9.5v6" />
+              </svg>Google Scholar</a>
+            <a href="https://github.com/txxxxh" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24"
+                fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.6 9.6 0 0 1 12 6.84a9.6 9.6 0 0 1 2.5.34c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.73c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+              </svg>GitHub</a>
+            <a href="cv.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" aria-hidden="true">
+                <path d="M6 2.5h8l4 4V21.5H6z" />
+                <path d="M14 2.5v4h4M9 12h6M9 16h6" />
+              </svg>CV</a>
           </div>
-          <div class="edu-item">
-            <div class="edu-degree">Research Intern in Computer Sciences</div>
-            <div class="edu-school">University of Wisconsin-Madison</div>
-            <div class="edu-year">2025 - 2026</div>
+        </div>
+        <div class="portrait">
+          <img src="photo.jpg" alt="Portrait of Xuhan Tong" width="240" height="300">
+        </div>
+      </div>
+    </div>
+
+    <section id="research">
+      <div class="wrap section-grid">
+        <p class="section-label">Research</p>
+        <div>
+          <h2>Toward stable and reliable inference in language models.</h2>
+          <p class="section-intro">My work develops theoretical and empirical accounts of when an LLM can recover a
+            supported inference path, why it may instead follow a salient shortcut, and how a system can diagnose and
+            repair the failure.</p>
+          <div class="research-map">
+            <article class="research-item">
+              <span class="research-number">01 · REACH</span>
+              <h3>In-context learning</h3>
+              <p>Characterizing how demonstration quality, prompt consistency, and pretraining support govern
+                generalization to unseen tasks.</p>
+            </article>
+            <article class="research-item">
+              <span class="research-number">02 · FAILURE</span>
+              <h3>Hallucination mechanisms</h3>
+              <p>Studying when high-frequency associations overpower decisive prompt constraints, producing inference
+                misalignment despite available knowledge.</p>
+            </article>
+            <article class="research-item">
+              <span class="research-number">03 · REPAIR</span>
+              <h3>Detection and intervention</h3>
+              <p>Separating knowledge gaps, context distraction, compute insufficiency, and calibration failure so that
+                mitigation can target the active cause.</p>
+            </article>
+            <article class="research-item">
+              <span class="research-number">04 · STRATEGY</span>
+              <h3>Multi-agent reliability</h3>
+              <p>Investigating communication and coordination strategies for agents solving complex tasks under
+                heterogeneous and conflicting constraints.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
-  </div>
 
-<!-- ── Awards ── -->
-  <div class="page-wrap">
-  <section id="awards">
-    <div class="section-header">
-      <h2 class="section-title">Awards</h2>
-      <div class="section-rule"></div>
-    </div>
-
-    <div style="max-width:700px">
-      <ul style="padding-left:1.0rem;">
-
-        <li style="margin-bottom:1.0rem;">
-          Comprehensive Excellence Scholarship, Tsinghua University, 2025
-        </li>
-
-        <li style="margin-bottom:1.0rem;">
-          Academic Excellence Scholarship, Tsinghua University, 2024
-        </li>
-
-        <li style="margin-bottom:1.0rem;">
-          Scientific and Technological Innovation Scholarship, Tsinghua University, 2024
-        </li>
-
-      </ul>
-    </div>
-
-  </section>
-</div>
-
-  <!-- ── Publications ── -->
-  <div class="page-wrap">
     <section id="publications">
-      <div class="section-header">
-        <h2 class="section-title">Publications</h2>
-        <div class="section-rule"></div>
-      </div>
-
-      <div class="pub-filters">
-        <button class="filter-btn active" onclick="filterPubs('all', this)">All</button>
-        <button class="filter-btn" onclick="filterPubs('2026', this)">2026</button>
-        <button class="filter-btn" onclick="filterPubs('2025', this)">2025</button>
-      </div>
-
-      <div class="pub-list" id="pub-list">
-
-        <div class="pub-item" data-year="2026">
-          <div class="pub-year">2026</div>
-          <div class="pub-content">
-            <div class="pub-title">Demonstrations, CoT, and Prompting: A Theoretical Analysis of ICL</div>
-            <div class="pub-authors"><strong>Xuhan Tong</strong>, Y. Zeng, J. Zhang</div>
-            <!-- <div class="pub-venue">In <span class="venue-name">Conference on [Topic] (CONF 2026)</span></div> -->
-            <div class="pub-links">
-              <a class="pub-link" href="https://arxiv.org/abs/2603.19611">Paper</a>
-              <a class="pub-link" href="https://arxiv.org/pdf/2603.19611">arXiv</a>
-              <a class="pub-link" href="https://github.com/txxxxh/Demonstrations-CoT-and-Prompting">Code</a>
-            </div>
-            <div class="pub-title">Understanding Why Language Models Hallucinate: Testing Reasoning Against Priors</div>
-            <div class="pub-authors">Yangfan Hu*, <strong>Xuhan Tong*</strong>, Haoyue Bai*, Xi Ding, Shashank Muralidhar Bharadwaj, Siyang Cao, Robert Nowak, Jiawei Zhang</div>
-            <!-- <div class="pub-venue">In <span class="venue-name">Conference on [Topic] (CONF 2026)</span></div> -->
-            <div class="pub-links">
-              <a class="pub-link" href="https://arxiv.org/abs/2607.00447">Paper</a>
-              <a class="pub-link" href="https://arxiv.org/pdf/2607.00447">arXiv</a>
-              <a class="pub-link" href="https://neohughus.github.io/Understanding_Why_Language_Models_Hallucinate/">Website</a>
-            </div>
+      <div class="wrap section-grid">
+        <p class="section-label">Publications</p>
+        <div>
+          <h2>Selected work</h2>
+          <div class="pub-list">
+            <article class="publication">
+              <div class="pub-year">2026</div>
+              <div>
+                <p class="pub-title">Understanding Why Language Models Hallucinate: Testing Reasoning Against Priors</p>
+                <p class="authors">Yangfan Hu<span class="equal">*</span>, <strong>Xuhan Tong<span
+                      class="equal">*</span></strong>, Haoyue Bai<span class="equal">*</span>, Xi Ding, Shashank
+                  Muralidhar Bharadwaj, Siyang Cao, Robert Nowak, Jiawei Zhang</p>
+                <p class="venue">arXiv preprint · <span class="equal">* Equal contribution</span></p>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2607.00447" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://neohughus.github.io/Understanding_Why_Language_Models_Hallucinate/" target="_blank"
+                    rel="noreferrer">Project</a>
+                </div>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2026</div>
+              <div>
+                <p class="pub-title">Demonstrations, CoT, and Prompting: A Theoretical Analysis of ICL</p>
+                <p class="authors"><strong>Xuhan Tong</strong>, Yuchen Zeng, Jiawei Zhang</p>
+                <p class="venue">COLM 2026 Workshop on Scientific Understanding of Foundation Models</p>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2603.19611" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://github.com/txxxxh/Demonstrations-CoT-and-Prompting" target="_blank"
+                    rel="noreferrer">Code</a>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- ── Footer ── -->
-  <footer>
-    <div class="page-wrap">
-      <div class="footer-inner">
-        <span>© 2026 Xuhan Tong</span>
-        <span>Last updated: <span id="last-updated">March 2026</span></span>
+    <section id="experience">
+      <div class="wrap section-grid">
+        <p class="section-label">Experience</p>
+        <div>
+          <h2>Research experience</h2>
+          <div class="experience-summary">
+            <h3>University of Wisconsin–Madison</h3>
+            <p class="experience-meta">Research Assistant · Advisor: Prof. <a href="https://jwzhang.netlify.app/"
+                target="_blank" rel="noreferrer">Jiawei Zhang</a> · October 2024 — Present</p>
+            <p>My research centers on reliable language-model inference. I have developed theoretical accounts of
+              in-context learning and Chain-of-Thought prompting, studied hallucination as inference misalignment
+              between prompt evidence and pretraining priors, and investigated counterfactual interventions that
+              distinguish knowledge-deployment failures from ignorance.</p>
+            <p>My current work extends this perspective to multi-agent systems, examining how specialized agents
+              communicate and coordinate when solving complex tasks under multiple constraints.</p>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section id="background">
+      <div class="wrap section-grid">
+        <p class="section-label">Background</p>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h3>Education</h3>
+            <p><strong>B.S., Mathematics &amp; Physics + Software Engineering</strong></p>
+            <p>Tsinghua University, Beijing</p>
+          </div>
+          <div class="detail-block">
+            <h3>Selected honors</h3>
+            <ul class="award-list">
+              <li><span class="award-year">2025</span>Comprehensive Outstanding Scholarship</li>
+              <li><span class="award-year">2024</span>Science &amp; Technology Innovation Outstanding Scholarship</li>
+              <li><span class="award-year">2024</span>Academic Excellence Scholarship</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Xuhan Tong</span>
+      <span>Last updated August 2026</span>
     </div>
   </footer>
-
-  <script>
-    function filterPubs(year, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.pub-item').forEach(item => {
-        const match = year === 'all' || item.dataset.year === year;
-        item.style.display = match ? 'grid' : 'none';
-      });
-    }
-
-    // Set last updated date
-    const d = new Date();
-    document.getElementById('last-updated').textContent =
-      d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-  </script>
-
 </body>
 
 </html>
